@@ -6,10 +6,14 @@ import java.io.FileInputStream;
 import java.util.Set;
 import java.util.UUID;
 import java.io.ObjectInputStream;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 
+@Controller
 public class DeserializationTest4 {
+    @PostMapping("/test")
     public void test(FileInputStream fileIS)
-        throws IOException, InterruptedException, ClassNotFoundException {
+        throws IOException, ClassNotFoundException {
 
         ObjectInputStream in = new ObjectInputStream(fileIS);
         ParentClass button = (ParentClass) in.readObject();
