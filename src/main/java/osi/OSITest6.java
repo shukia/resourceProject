@@ -2,11 +2,13 @@ package osi;
 
 
 import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
 
 public class OSITest6 {
 
 
-    public void test(String data) throws IOException, InterruptedException{
+    public void test(HttpServletRequest request) throws IOException, InterruptedException{
+        String data = request.getParameter("data");
         Inner inner = new Inner(data);
         doStuff("mkdir", inner);
     }

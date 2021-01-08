@@ -2,9 +2,11 @@ package osi;
 
 
 import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
 
 public class OSITest1 {
-    public void test(String data) throws IOException, InterruptedException{
+    public void test(HttpServletRequest request) throws IOException, InterruptedException{
+        String data = request.getParameter("data");
         String osCommand;
         if(System.getProperty("os.name").toLowerCase().contains("win"))
         {
