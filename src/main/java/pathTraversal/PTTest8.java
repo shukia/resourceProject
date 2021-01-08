@@ -2,10 +2,14 @@ package pathTraversal;
 
 import java.util.UUID;
 import java.io.File;
+import javax.servlet.http.HttpServletRequest;
 
 public class PTTest8 {
     private final String BASE_DIRECTORY = "src/";
-    public void Test(String filename, String subDirName) {
+
+    public void Test(HttpServletRequest request) {
+        String filename = request.getParameter("filename");
+        String subDirName = request.getParameter("subDirName");
         try {
             String dirpath = getvalue(BASE_DIRECTORY) + subDirName + "subsubdir/";
             new File(dirpath + filename).delete();

@@ -1,10 +1,13 @@
 package pathTraversal;
 
 import java.io.File;
+import javax.servlet.http.HttpServletRequest;
 
 public class PTTest5 {
     private final String BASE_DIRECTORY = "/users/ws/profiles/";
-    public void Test(String filename) {
+
+    public void Test(HttpServletRequest request) {
+        String filename = request.getParameter("filename");
         try {
             File myFile = new File(BASE_DIRECTORY + filename);
             delFile(myFile);

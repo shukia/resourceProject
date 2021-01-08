@@ -5,7 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 
 public class PTTest9 {
     private final String BASE_DIRECTORY = "src";
-    public void Test(String filename, HttpServletRequest request) {
+
+    public void Test(HttpServletRequest request) {
+        String filename = request.getParameter("filename");
         try {
             int a =0;
             String f = request.getParameter("name");
