@@ -6,7 +6,9 @@ import javax.xml.xpath.XPathFactory;
 
 public class XPathTest2 {
 
-  public String authenticate(String user, String pass) {
+  public String authenticate(HttpServletRequest request) {
+    String user = request.getParameter("user");
+    String pass = request.getParameter("pass");
     XPath xPath = XPathFactory.newInstance().newXPath();
     String expression = "/users/user[@name='" + user + "' and @pass='" + pass + "']";
     try {
