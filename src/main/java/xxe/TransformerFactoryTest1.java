@@ -1,5 +1,6 @@
 package xxe;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
@@ -9,8 +10,8 @@ import java.io.StringWriter;
 
 public class TransformerFactoryTest1 {
 
-    public String getXml(String xmlStr) {
-
+    public String getXml(HttpServletRequest request) {
+        String xmlStr = request.getParameter("xmlStr");
         String result = unsafe(xmlStr);
 
         if(result != null) {

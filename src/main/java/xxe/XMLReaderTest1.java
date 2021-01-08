@@ -1,5 +1,6 @@
 package xxe;
 
+import javax.servlet.http.HttpServletRequest;
 import org.xml.sax.*;
 import org.xml.sax.helpers.XMLReaderFactory;
 
@@ -7,8 +8,8 @@ import java.io.StringReader;
 
 public class XMLReaderTest1 {
 
-    public String getXml(String xmlStr) {
-
+    public String getXml(HttpServletRequest request) {
+        String xmlStr = request.getParameter("xmlStr");
         String result = unsafe(xmlStr);
 
         if(result != null) {

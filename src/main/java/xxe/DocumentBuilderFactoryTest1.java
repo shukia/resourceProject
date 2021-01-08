@@ -1,5 +1,6 @@
 package xxe;
 
+import javax.servlet.http.HttpServletRequest;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
@@ -8,8 +9,8 @@ import java.io.StringReader;
 
 public class DocumentBuilderFactoryTest1 {
 
-    public String getXml(String xmlStr) {
-
+    public String getXml(HttpServletRequest request) {
+        String xmlStr = request.getParameter("xmlStr");
         Document doc = unsafe(xmlStr );
 
         if (doc != null) {

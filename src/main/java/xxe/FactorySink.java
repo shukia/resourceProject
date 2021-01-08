@@ -9,7 +9,6 @@ import javax.xml.stream.XMLStreamReader;
 public class FactorySink {
 
     public void getXml(String filename, XMLInputFactory inputFactory) throws XMLStreamException {
-
         try {
             XMLStreamReader reader = inputFactory.createXMLStreamReader(new FileInputStream(filename));
             int eventCounter = 0;

@@ -1,5 +1,6 @@
 package xxe;
 
+import javax.servlet.http.HttpServletRequest;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
@@ -9,8 +10,8 @@ import java.io.StringReader;
 
 public class SAXReaderTest1 {
 
-    public String getXml(String xmlStr) {
-
+    public String getXml(HttpServletRequest request) {
+        String xmlStr = request.getParameter("xmlStr");
         String result = unsafe(xmlStr);
 
         if(result != null) {

@@ -1,5 +1,6 @@
 package xxe;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.XMLConstants;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
@@ -13,8 +14,8 @@ import java.io.StringWriter;
 
 public class SAXTransformerFactoryTest1 {
 
-    public String getXml(String xmlStr) {
-
+    public String getXml(HttpServletRequest request) {
+        String xmlStr = request.getParameter("xmlStr");
         String result = unsafe(xmlStr);
 
         if(result != null) {
