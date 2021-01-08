@@ -4,10 +4,12 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.UUID;
+import javax.servlet.http.HttpServletRequest;
 
 public class SQLTest21 {
 
-  public void sqlTest21(String ip) {
+  public void sqlTest21(HttpServletRequest request) {
+    String ip = request.getParameter("ip");
     try {
       String sql = "INSERT INTO banned_ip(id, ip) VALUE('" + UUID.randomUUID().toString() + "','" + ip + "')";
       Statement statement = getJDBCConnection().createStatement();
