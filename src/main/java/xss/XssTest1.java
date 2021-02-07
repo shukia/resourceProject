@@ -2,7 +2,6 @@ package xss;
 import org.owasp.encoder.Encode;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -25,7 +24,7 @@ public class XssTest1 {
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
             out.write("<br><br>Unsafe unquoted attribute with bad sanitizer:<br>");
-            out.write("<button value=" + Encode.forHtmlAttribute(name) + ">Unsafe unquoted attribute with bad sanitizer</button>");
+            out.write("<button value=" + name + ">Unsafe unquoted attribute with bad sanitizer</button>");
         } catch (IOException e) {
             e.printStackTrace();
         }

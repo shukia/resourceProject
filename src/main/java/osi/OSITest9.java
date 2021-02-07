@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
-public class OSITest2 {
+public class OSITest9 {
 
   public void runCommand(HttpServletRequest request) throws IOException, InterruptedException {
     String input1 = request.getParameter("input1");
@@ -23,11 +23,9 @@ public class OSITest2 {
       /* running on non-Windows */
       osCommand = "/bin/ls ";
     }
-    String newData = data1 + uuid + data2;
 
     /* POTENTIAL FLAW: command injection */
-    Process process = Runtime.getRuntime().exec(osCommand + newData);
+    Process process = Runtime.getRuntime().exec(osCommand + data1 + data2);
     process.waitFor();
   }
 }
-

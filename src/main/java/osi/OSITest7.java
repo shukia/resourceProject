@@ -16,7 +16,7 @@ public class OSITest7 {
 
     private void doStuff(String command, Inner inner) throws IOException, InterruptedException {
         /* POTENTIAL FLAW: command injection */
-        Process process = Runtime.getRuntime().exec(command+inner.getSuperInner());
+        Process process = Runtime.getRuntime().exec(command + inner.getSuperInner());
         process.waitFor();
     }
 
